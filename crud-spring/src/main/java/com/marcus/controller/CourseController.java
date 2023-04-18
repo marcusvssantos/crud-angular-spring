@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
 import com.marcus.model.Course;
 import com.marcus.repository.CourseRepository;
@@ -30,11 +31,12 @@ public class CourseController {
     }
 
     @PostMapping
-    public ResponseEntity<Course> create(@RequestBody Course course) {
+    @ResponseStatus(code = HttpStatus.CREATED)
+    public Course create(@RequestBody Course course) {
         // System.out.println(course.getName());
-        //return courseRepository.save(course);
-        return ResponseEntity.status(HttpStatus.CREATED)
-            .body(courseRepository.save(course));
+        return courseRepository.save(course);
+        // return ResponseEntity.status(HttpStatus.CREATED)
+        //     .body(courseRepository.save(course));
     }
 
 }
