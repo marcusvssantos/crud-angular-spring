@@ -16,7 +16,7 @@ export class CoursesComponent implements OnInit {
 
   courses$: Observable<Course[]>;
   //courses: Course[] = [];
-  displayedColumns = ['name','category','actions'];
+
   //coursesService: CoursesService;
 
   constructor(
@@ -29,10 +29,11 @@ export class CoursesComponent implements OnInit {
     //this.coursesService = new CoursesService();
     this.courses$ = this.coursesService.list().pipe(
       catchError(error => {
-        this.onError('Erro ao carregar cursos.')
+        this.onError('Erro ao carregar cursos.');
         return of([])
       })
     );
+
 
     //this.coursesService.list().subscribe(courses => this.courses = courses);
   }
@@ -48,6 +49,7 @@ export class CoursesComponent implements OnInit {
   }
 
   onAdd() {
-    this.router.navigate(['new'], {relativeTo: this.route});  }
+    //this.router.navigate(['new'], {relativeTo: this.route});
+  }
 
 }
