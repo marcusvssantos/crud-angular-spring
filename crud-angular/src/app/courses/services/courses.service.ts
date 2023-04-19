@@ -32,7 +32,7 @@ export class CoursesService {
       // console.log('update');
       return this.update(record);
     }
-    // console.log('create');
+
     return this.create(record);
   }
 
