@@ -44,6 +44,11 @@ export class CoursesComponent implements OnInit {
       data: errorMsg
     });
   }
+
+  onEdit(course: Course) {
+    this.router.navigate(['edit', course._id], { relativeTo: this.route });
+  }
+
   ngOnInit(): void {
 
   }

@@ -3,16 +3,19 @@
     <mat-toolbar color="primary"> Cursos Diponíveis </mat-toolbar>
 
     <div class="example-container mat-elevation-z8">
-      <ng-container *ngIf="courses$ | async as courses; else loading">
-        <!-- Use ng-container para não criar um elemento HTML extra quando não houver cursos -->
-        <app-courses-list [courses]="courses" (add)="onAdd()"></app-courses-list>
-      </ng-container>
+      <app-courses-list
+        *ngIf="courses$ | async as courses; else loading"
+        [courses]="courses"
+        (add)="onAdd()"
+        (edit)="onEdit($event)"
+      ></app-courses-list>
 
       <ng-template #loading>
         <div class="loading-spinner">
           <mat-spinner></mat-spinner>
         </div>
       </ng-template>
+
     </div>
 
   </mat-card-content>

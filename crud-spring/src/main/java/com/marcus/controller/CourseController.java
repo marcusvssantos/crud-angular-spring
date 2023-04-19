@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
@@ -25,6 +26,11 @@ public class CourseController {
     private final CourseRepository courseRepository;
 
 
+    @GetMapping
+    public @ResponseBody List<Course> list() {
+        return courseRepository.findAll();
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<Course> findById(@PathVariable Long id) {
         return courseRepository.findById(id)
@@ -38,7 +44,7 @@ public class CourseController {
         // System.out.println(course.getName());
         return courseRepository.save(course);
         // return ResponseEntity.status(HttpStatus.CREATED)
-        //     .body(courseRepository.save(course));
+        //.body(courseRepository.save(course));
     }
 
 }
