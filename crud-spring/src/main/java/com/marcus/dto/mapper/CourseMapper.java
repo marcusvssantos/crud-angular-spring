@@ -1,7 +1,7 @@
 package com.marcus.dto.mapper;
 
 import org.springframework.stereotype.Component;
-
+import com.marcus.enums.Category;
 import com.marcus.dto.CourseDTO;
 import com.marcus.model.Course;
 
@@ -12,7 +12,7 @@ public class CourseMapper {
         if (course == null) {
             return null;
         }
-        return new CourseDTO(course.getId(), course.getName(), course.getCategory());
+        return new CourseDTO(course.getId(), course.getName(), "Front-end");
     }
 
     public Course toEntity(CourseDTO courseDTO) {
@@ -26,7 +26,7 @@ public class CourseMapper {
             course.setId(courseDTO.id());
         }
         course.setName(courseDTO.name());
-        course.setCategory(courseDTO.category());
+        course.setCategory(Category.FRONT_END);
         course.setStatus("Ativo");
         return course;
     }

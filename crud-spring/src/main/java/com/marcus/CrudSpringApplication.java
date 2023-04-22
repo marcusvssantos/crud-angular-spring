@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Bean;
 
 import com.marcus.model.Course;
 import com.marcus.repository.CourseRepository;
+import com.marcus.enums.Category;
 
 @SpringBootApplication
 public class CrudSpringApplication {
@@ -22,7 +23,7 @@ public class CrudSpringApplication {
 				
 				Course c =new Course();
 				c.setName("Angular com Spring");
-				c.setCategory("Front-end");
+				c.setCategory(Category.BACK_END);
 
 				courseRepository.save(c);
 			};
