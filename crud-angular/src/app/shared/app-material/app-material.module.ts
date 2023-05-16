@@ -10,23 +10,24 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 
 @NgModule({
   exports: [
-    MatTableModule,
     MatCardModule,
+    MatTableModule,
     MatToolbarModule,
     MatProgressSpinnerModule,
-    MatIconModule,
     MatDialogModule,
     MatButtonModule,
     MatIconModule,
     MatFormFieldModule,
     MatInputModule,
+    MatCardModule,
     MatSelectModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatAutocompleteModule
   ],
-
 })
 export class AppMaterialModule { }

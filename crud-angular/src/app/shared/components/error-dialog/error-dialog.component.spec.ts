@@ -11,7 +11,9 @@ describe('ErrorDialogComponent', () => {
       declarations: [ ErrorDialogComponent ]
     })
     .compileComponents();
+  });
 
+  beforeEach(() => {
     fixture = TestBed.createComponent(ErrorDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

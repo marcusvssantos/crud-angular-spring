@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+
 import { Course } from '../../model/course';
 
 @Component({
@@ -27,7 +28,7 @@ export class CoursesListComponent implements OnInit {
     this.edit.emit(course);
   }
 
-  onDelete(course: Course){
+  onDelete(course: Course) {
     this.remove.emit(course);
   }
 

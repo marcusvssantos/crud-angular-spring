@@ -5,17 +5,7 @@
             "name": "Spring Boot-CrudSpringApplication<crud-spring>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
-            "mainClass": "com.marcus.crudspring.CrudSpringApplication",
-            "projectName": "crud-spring",
-            "args": "",
-            "envFile": "${workspaceFolder}/.env"
-        },
-        {
-            "type": "java",
-            "name": "Spring Boot-CrudSpringApplication<crud-spring>",
-            "request": "launch",
-            "cwd": "${workspaceFolder}",
-            "mainClass": "com.marcus.CrudSpringApplication",
+            "mainClass": "com.loiane.CrudSpringApplication",
             "projectName": "crud-spring",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
